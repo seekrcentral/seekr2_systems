@@ -1,0 +1,101 @@
+<?xml version="1.0" ?>
+<model_input class='Model_input'>
+    <calculation_type>mmvt</calculation_type>
+    <calculation_settings class="MMVT_input_settings">
+        <md_output_interval>10000</md_output_interval>
+        <md_steps_per_anchor>100000</md_steps_per_anchor>
+    </calculation_settings>
+    <temperature>298.15</temperature>
+    <pressure>1.0</pressure>
+    <ensemble>nvt</ensemble>
+    <root_directory>~/rmsd_test/</root_directory>
+    <md_program>openmm</md_program>
+    <constraints>HBonds</constraints>
+    <rigidWater>True</rigidWater>
+    <hydrogenMass/>
+    <integrator_type>langevin</integrator_type>
+    <timestep>0.002</timestep>
+    <nonbonded_cutoff>0.9</nonbonded_cutoff>
+    <cv_inputs>
+        <cv_input class="RMSD_cv_input">
+            <group>[4, 16, 26, 47, 57, 74, 98, 117, 139, 151, 158, 173, 
+                       179, 190, 201, 208, 240, 254, 268, 274]</group>
+            <ref_structure>trp_cage_files/trp_cage.pdb</ref_structure>
+            <input_anchors>
+                <input_anchor class="RMSD_cv_anchor">
+                    <value>0.2</value>
+                    <lower_milestone_value/>
+                    <upper_milestone_value/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>trp_cage_files/trp_cage.prmtop</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename>trp_cage_files/trp_cage.pdb</pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>True</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="RMSD_cv_anchor">
+                    <value>0.4</value>
+                    <lower_milestone_value/>
+                    <upper_milestone_value/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>trp_cage_files/trp_cage.prmtop</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename>trp_cage_files/trp_cage_0.40.pdb</pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="RMSD_cv_anchor">
+                    <value>0.6</value>
+                    <lower_milestone_value/>
+                    <upper_milestone_value/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>trp_cage_files/trp_cage.prmtop</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename>trp_cage_files/trp_cage_0.60.pdb</pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="RMSD_cv_anchor">
+                    <value>0.8</value>
+                    <lower_milestone_value/>
+                    <upper_milestone_value/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>trp_cage_files/trp_cage.prmtop</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename>trp_cage_files/trp_cage_0.80.pdb</pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="RMSD_cv_anchor">
+                    <value>1.0</value>
+                    <lower_milestone_value/>
+                    <upper_milestone_value/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>trp_cage_files/trp_cage.prmtop</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename>trp_cage_files/trp_cage_1.00.pdb</pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="RMSD_cv_anchor">
+                    <value>1.2</value>
+                    <lower_milestone_value/>
+                    <upper_milestone_value/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>trp_cage_files/trp_cage.prmtop</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>True</bulk_anchor>
+                </input_anchor>
+            </input_anchors>
+        </cv_input>
+    </cv_inputs>
+    <browndye_settings_input/>
+</model_input>
