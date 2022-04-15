@@ -1,0 +1,105 @@
+<?xml version="1.0" ?>
+<model_input class='Model_input'>
+    <calculation_type>elber</calculation_type>
+    <calculation_settings class="Elber_input_settings">
+        <temperature_equil_progression>[300., 310., 320., 330., 340., 350., 340., 330., 320., 310., 300.]</temperature_equil_progression>
+        <num_temperature_equil_steps>1000</num_temperature_equil_steps>
+        <num_umbrella_stage_steps>400000</num_umbrella_stage_steps>
+        <umbrella_force_constant>5000.0</umbrella_force_constant>
+        <fwd_rev_interval>200</fwd_rev_interval>
+        <rev_output_interval/>
+        <fwd_output_interval/>
+    </calculation_settings>
+    <temperature>300.0</temperature>
+    <pressure>1.0</pressure>
+    <ensemble>nvt</ensemble>
+    <root_directory>~/toy_seekr_systems/entropy_barrier_elber</root_directory>
+    <md_program>openmm</md_program> 
+    <constraints>none</constraints>
+    <rigidWater>True</rigidWater>
+    <hydrogenMass/>
+    <integrator_type>langevin</integrator_type>
+    <timestep>0.002</timestep>
+    <nonbonded_cutoff/>
+    <cv_inputs>
+        <cv_input class="Toy_cv_input">
+            <groups>[[0]]</groups>
+            <variable_name>value</variable_name>
+            <cv_expression>y1</cv_expression>
+            <openmm_expression>step(k*(y1-value))</openmm_expression>
+            <restraining_expression>0.5*k*(y1-value)^2</restraining_expression>
+            <input_anchors>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>-0.7</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, -0.7, 0.0]]]</starting_positions>
+                    <bound_state>True</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>-0.5</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, -0.5, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>-0.3</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, -0.3, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>-0.1</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, -0.1, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>0.1</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, 0.1, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>0.3</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, 0.3, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>0.5</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, 0.5, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>0.7</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[0.0, 0.7, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>True</bulk_anchor>
+                </input_anchor>
+            </input_anchors>
+        </cv_input>
+    </cv_inputs>
+    <browndye_settings_input/>
+    <toy_settings_input class="Toy_settings_input">
+        <potential_energy_expression>5*(x1^6+y1^6+exp(-(10*y1)^2)*(1-exp(-(10*x1)^2)))</potential_energy_expression>
+        <num_particles>1</num_particles>
+        <masses numpy="float32">[10.0]</masses>
+    </toy_settings_input>
+</model_input>

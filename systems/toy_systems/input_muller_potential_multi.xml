@@ -1,0 +1,183 @@
+<?xml version="1.0" ?>
+<model_input class='Model_input'>
+    <calculation_type>mmvt</calculation_type>
+    <calculation_settings class="MMVT_input_settings">
+        <md_output_interval>50</md_output_interval>
+        <md_steps_per_anchor>50000</md_steps_per_anchor>
+    </calculation_settings>
+    <temperature>300.0</temperature>
+    <pressure>1.0</pressure>
+    <ensemble>nvt</ensemble>
+    <root_directory>~/toy_seekr_systems/muller_potential_multi</root_directory>
+    <md_program>openmm</md_program> 
+    <constraints>none</constraints>
+    <rigidWater>True</rigidWater>
+    <hydrogenMass/>
+    <integrator_type>langevin</integrator_type>
+    <timestep>0.002</timestep>
+    <nonbonded_cutoff/>
+    <cv_inputs>
+        <cv_input class="Grid_combo">
+            <cv_inputs>
+                <cv_input class="Toy_cv_input">
+                    <groups>[[0]]</groups>
+                    <variable_name>value</variable_name>
+                    <cv_expression>x1</cv_expression>
+                    <openmm_expression>step(k*(x1 - value))</openmm_expression>
+                    <input_anchors>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-1.5</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-1.25</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-1.0</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-0.75</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-0.5</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-0.25</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-0.0</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.25</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.5</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.75</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>1.0</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                    </input_anchors>
+                </cv_input>
+                <cv_input class="Toy_cv_input">
+                    <groups>[[0]]</groups>
+                    <variable_name>value</variable_name>
+                    <cv_expression>y1</cv_expression>
+                    <openmm_expression>step(k*(y1 - value))</openmm_expression>
+                    <input_anchors>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>-0.25</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.0</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.25</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.5</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>0.75</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>1.0</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>1.25</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>1.5</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>1.75</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                        <input_anchor class="Toy_cv_anchor">
+                            <value>2.0</value>
+                            <starting_positions/>
+                            <bound_state>False</bound_state>
+                            <bulk_anchor>False</bulk_anchor>
+                        </input_anchor>
+                    </input_anchors>
+                </cv_input>
+            </cv_inputs>
+            <state_points>
+                <state_point  class="State_point">
+                    <name>stateA</name>
+                    <location>[[[0.5, 0.0, 0.0]],[[0.5, 0.0, 0.0]]]</location>
+                </state_point>
+                <state_point  class="State_point">
+                    <name>stateB</name>
+                    <location>[[[-0.5, 1.5, 0.0]], [[-0.5, 1.5, 0.0]]]</location>
+                </state_point>
+            </state_points>
+        </cv_input>
+    </cv_inputs>
+    <browndye_settings_input/>
+    <toy_settings_input class="Toy_settings_input">
+        <potential_energy_expression>-20*exp(-1 * (x1 - 1)^2 + 0 * (x1 - 1) * (y1 - 0) - 10 * (y1 - 0)^2) - 10*exp(-1 * (x1 - 0)^2 + 0 * (x1 - 0) * (y1 - 0.5) - 10 * (y1 - 0.5)^2) - 17*exp(-6.5 * (x1 + 0.5)^2 + 11 * (x1 + 0.5) * (y1 - 1.5) - 6.5 * (y1 - 1.5)^2) + 1.5*exp(0.7 * (x1 + 1)^2 + 0.6 * (x1 + 1) * (y1 - 1) + 0.7 * (y1 - 1)^2)</potential_energy_expression>
+        <num_particles>1</num_particles>
+        <masses numpy="float32">[10.0]</masses>
+    </toy_settings_input>
+</model_input>
