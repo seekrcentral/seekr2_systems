@@ -6,7 +6,7 @@ default_name
 %FORMAT(10I8)                                                                   
      284      12     136     154     315     211     645     616       0       0
     1582      20     154     211     616      51     114     105      26       0
-       0       0       0       0       0       0       0       0      24       0
+       0       0       0       0       0       0       0       1      24       0
        0
 %FLAG ATOM_NAME                                                                 
 %FORMAT(20a4)                                                                   
@@ -1703,6 +1703,9 @@ BLA BLA BLA BLA
        0       0       0       0       0       0       0       0       0       0
        0       0       0       0       0       0       0       0       0       0
        0       0       0       0
+%FLAG BOX_DIMENSIONS
+%FORMAT(5E16.8)
+  1.09471219E+02  6.49127105E+01  6.49127105E+01  6.49127105E+01
 %FLAG RADIUS_SET                                                                
 %FORMAT(1a80)                                                                   
 modified Bondi radii (mbondi)                                                   

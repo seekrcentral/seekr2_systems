@@ -165,11 +165,11 @@
             <state_points>
                 <state_point  class="State_point">
                     <name>stateA</name>
-                    <location>[[[0.5, 0.0, 0.0]],[[0.5, 0.0, 0.0]]]</location>
+                    <location>[0.5, 0.0, 0.0]</location>
                 </state_point>
                 <state_point  class="State_point">
                     <name>stateB</name>
-                    <location>[[[-0.5, 1.5, 0.0]], [[-0.5, 1.5, 0.0]]]</location>
+                    <location>[-0.5, 1.5, 0.0]</location>
                 </state_point>
             </state_points>
         </cv_input>

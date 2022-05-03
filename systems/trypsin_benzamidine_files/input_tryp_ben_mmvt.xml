@@ -168,6 +168,12 @@
                     <bulk_anchor>True</bulk_anchor>
                 </input_anchor>
             </input_anchors>
+            <state_points>
+                <state_point  class="State_point">
+                    <name>bound</name>
+                    <location>0.0</location>
+                </state_point>
+            </state_points>
         </cv_input>
     </cv_inputs>
     <browndye_settings_input class="Browndye_settings_input">

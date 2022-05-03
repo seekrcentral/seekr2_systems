@@ -16,6 +16,7 @@ from seekr2.modules.common_base import Ion, Amber_params, Forcefield_params, \
 from seekr2.modules.common_cv import Spherical_cv_anchor, Spherical_cv_input, \
     RMSD_cv_input, RMSD_cv_anchor, Toy_cv_input, Toy_cv_anchor, Grid_combo, \
     State_point
+import seekr2.run as run
 
 import create_model_input
 
@@ -40,7 +41,11 @@ def run_all_systems():
         for input_filename in glob_list:
             print("Preparing system:", input_filename)
             model_input_filename = os.path.join(TEST_DIRECTORY, input_filename)
-            create_model_input.prepare_model(model_input_filename, tmp_path.name, in_directory=SYSTEMS_DIRECTORY)
+            model = create_model_input.prepare_model(model_input_filename, tmp_path.name, in_directory=SYSTEMS_DIRECTORY)
+            if not model.using_toy():
+                if model.get_type == "elber":
+                    model.calculation_settings.fwd_rev_interval = 100
+                run.run(model, "0", min_total_simulation_length=1000)
 
 if __name__ == "__main__":
     #run_1_system()

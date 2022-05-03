@@ -425,4 +425,4 @@ def prepare_model(model_input_filename, tmp_path, in_directory):
     if not skip_checks:
         check.check_pre_simulation_all(model)
     assert os.path.exists(model.anchor_rootdir)
-    return
+    return model

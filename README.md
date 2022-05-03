@@ -18,6 +18,14 @@ systems/
         input_tryp_ben_mmvt_namd.xml
         input_tryp_ben_mmvt.xml
         input_tryp_ben_mmvt_hmr.xml
+    toy_systems/
+        input_entropy_barrier_elber.xml
+        input_entropy_barrier_multidimensional.xml
+        input_entropy_barrier.xml
+        input_muller_potential_cvs.xml
+        input_muller_potential_multi.xml
+        input_muller_potential.xml
+        input_simple_quadratic_potential.xml
 ```
 
 Any one of these input files may be used as input to a SEEKR2 calculation.
