@@ -2,6 +2,7 @@
 Compare the RMSD of two different structures whose RMSD is known.
 """
 
+import pytest
 import numpy as np
 from scipy.spatial import transform
 
@@ -71,7 +72,8 @@ def test_rmsd_scipy():
     print("Scipy RMSD:", scipy_rmsd)
     print("expected RMSD:", expected_rmsd)
     assert np.isclose(scipy_rmsd, expected_rmsd, atol=1e-3)
-    
+
+@pytest.mark.needs_cuda
 def test_rmsd_openmm():
     group = [4, 16, 26, 47, 57, 74, 98, 117, 139, 151, 158, 173, 179, 190, 
              201, 208, 240, 254, 268, 274]
