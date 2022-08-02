@@ -26,7 +26,7 @@
                     <value>-0.7</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, -0.7, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, -0.7, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -34,7 +34,7 @@
                     <value>-0.5</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, -0.5, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, -0.5, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -42,7 +42,7 @@
                     <value>-0.3</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, -0.3, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, -0.3, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -50,7 +50,7 @@
                     <value>-0.1</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, -0.1, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, -0.1, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -58,7 +58,7 @@
                     <value>0.1</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, 0.1, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, 0.1, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -66,7 +66,7 @@
                     <value>0.3</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, 0.3, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, 0.3, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -74,7 +74,7 @@
                     <value>0.5</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, 0.5, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, 0.5, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -82,7 +82,7 @@
                     <value>0.7</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[0.0, 0.7, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[0.0, 0.7, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -90,19 +90,19 @@
             <state_points>
                 <state_point  class="State_point">
                     <name>stateB</name>
-                    <location>[0.5, 0.5, 0.0]</location>
+                    <location>[[0.5, 0.5, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]</location>
                 </state_point>
                 <state_point  class="State_point">
                     <name>stateA</name>
-                    <location>[-0.5, -0.5, 0.0]</location>
+                    <location>[[-0.5, -0.5, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]</location>
                 </state_point>
             </state_points>
         </cv_input>
     </cv_inputs>
     <browndye_settings_input/>
     <toy_settings_input class="Toy_settings_input">
-        <potential_energy_expression>4.0*(1-((x1+y1)^2))^2+8.0*(x1-y1)^2*(1.1)+z1^2</potential_energy_expression>
-        <num_particles>1</num_particles>
-        <masses numpy="float32">[10.0]</masses>
+        <potential_energy_expression>4.0*(1-((x1+y1)^2))^2+8.0*(x1-y1)^2*(1.1)+z1^2+x2^2+y2^2+z2^2+x3^2+y3^2+z3^2+x4^2+y4^2+z4^2</potential_energy_expression>
+        <num_particles>4</num_particles>
+        <masses numpy="float32">[10.0, 10.0, 10.0, 10.0]</masses>
     </toy_settings_input>
 </model_input>

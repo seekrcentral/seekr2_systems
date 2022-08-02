@@ -43,7 +43,7 @@ def run_all_systems():
             model_input_filename = os.path.join(TEST_DIRECTORY, input_filename)
             model = create_model_input.prepare_model(model_input_filename, tmp_path.name, in_directory=SYSTEMS_DIRECTORY)
             if not model.using_toy():
-                if model.get_type == "elber":
+                if model.get_type() == "elber":
                     model.calculation_settings.fwd_rev_interval = 10
                     model.calculation_settings.num_umbrella_stage_steps = 100
                 run.run(model, "0", min_total_simulation_length=1000)
