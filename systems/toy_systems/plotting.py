@@ -98,6 +98,7 @@ class Toy_plot():
                     dcd_file_glob = "*.swarm_{}.dcd".format(frame)
                 dcd_glob = os.path.join(rootdir, anchor.directory, anchor.production_directory, dcd_file_glob)
                 dcd_files = glob.glob(dcd_glob)
+                assert len(dcd_files) > 0, "No DCD files provided."
                 traj = mdtraj.load(dcd_files, top=pdb_path)
                 positions_frame_list.append(traj.xyz)
                 

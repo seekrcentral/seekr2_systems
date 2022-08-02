@@ -80,7 +80,7 @@
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
                 <input_anchor class="Toy_cv_anchor">
-                    <value>1.5</value>
+                    <value>1.4</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
                     <starting_positions numpy="float32">[[[-1.0, 0.75, 0.0]]]</starting_positions>
@@ -88,10 +88,26 @@
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
                 <input_anchor class="Toy_cv_anchor">
+                    <value>1.6</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[-1.0, 0.85, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
                     <value>1.75</value>
                     <lower_milestone_radius/>
                     <upper_milestone_radius/>
-                    <starting_positions numpy="float32">[[[-1.0, 1.0, 0.0]]]</starting_positions>
+                    <starting_positions numpy="float32">[[[-1.0, 1.1, 0.0]]]</starting_positions>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Toy_cv_anchor">
+                    <value>1.85</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_positions numpy="float32">[[[-1.0, 1.2, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
                     <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
@@ -101,9 +117,19 @@
                     <upper_milestone_radius/>
                     <starting_positions numpy="float32">[[[-0.6, 1.5, 0.0]]]</starting_positions>
                     <bound_state>False</bound_state>
-                    <bulk_anchor>True</bulk_anchor>
+                    <bulk_anchor>False</bulk_anchor>
                 </input_anchor>
             </input_anchors>
+            <state_points>
+                <state_point  class="State_point">
+                    <name>stateA</name>
+                    <location>[0.5, 0.0, 0.0]</location>
+                </state_point>
+                <state_point  class="State_point">
+                    <name>stateB</name>
+                    <location>[-0.5, 1.5, 0.0]</location>
+                </state_point>
+            </state_points>
         </cv_input>
     </cv_inputs>
     <browndye_settings_input/>
