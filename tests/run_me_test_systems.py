@@ -26,10 +26,16 @@ SYSTEMS_DIRECTORY = os.path.join(TEST_DIRECTORY, "../systems/")
 def run_1_system():
     tmp_path = tempfile.TemporaryDirectory()
     #model_input_filename = os.path.join(TEST_DIRECTORY, "../systems/trypsin_benzamidine_files/input_tryp_ben_mmvt.xml")
-    #model_input_filename = os.path.join(TEST_DIRECTORY, "../systems/trypsin_benzamidine_files/input_tryp_ben_elber.xml")
+    model_input_filename = os.path.join(TEST_DIRECTORY, "../systems/trypsin_benzamidine_files/input_tryp_ben_elber.xml")
     #model_input_filename = os.path.join(TEST_DIRECTORY, "../systems/trp_cage_files/input_trp_cage.xml")
-    model_input_filename = os.path.join(TEST_DIRECTORY, "../systems/superoxide_dismutase_files/input_sod.xml")
-    create_model_input.prepare_model(model_input_filename, tmp_path.name, in_directory=SYSTEMS_DIRECTORY)
+    #model_input_filename = os.path.join(TEST_DIRECTORY, "../systems/superoxide_dismutase_files/input_sod.xml")
+    model = create_model_input.prepare_model(model_input_filename, tmp_path.name, in_directory=SYSTEMS_DIRECTORY)
+    if not model.using_toy():
+        if model.get_type() == "elber":
+            model.calculation_settings.fwd_rev_interval = 10
+            model.calculation_settings.num_umbrella_stage_steps = 100
+            
+        run.run(model, "1", min_total_simulation_length=100)
     return
 
 def run_all_systems():
@@ -46,7 +52,8 @@ def run_all_systems():
                 if model.get_type() == "elber":
                     model.calculation_settings.fwd_rev_interval = 10
                     model.calculation_settings.num_umbrella_stage_steps = 100
-                run.run(model, "0", min_total_simulation_length=1000)
+
+                run.run(model, "1", min_total_simulation_length=100)
 
 if __name__ == "__main__":
     #run_1_system()

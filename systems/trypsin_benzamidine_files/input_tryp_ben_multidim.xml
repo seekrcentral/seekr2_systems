@@ -167,7 +167,7 @@
                                 <pdb_coordinates_filename></pdb_coordinates_filename>
                             </starting_amber_params>
                             <bound_state>False</bound_state>
-                            <bulk_anchor>True</bulk_anchor>
+                            <bulk_anchor>False</bulk_anchor>
                         </input_anchor>
                     </input_anchors>
                 </cv_input>
@@ -221,7 +221,7 @@
                                 <pdb_coordinates_filename></pdb_coordinates_filename>
                             </starting_amber_params>
                             <bound_state>False</bound_state>
-                            <bulk_anchor>False</bulk_anchor>
+                            <bulk_anchor>True</bulk_anchor>
                         </input_anchor>
                     </input_anchors>
                 </cv_input>
