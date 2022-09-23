@@ -134,7 +134,7 @@
     </cv_inputs>
     <browndye_settings_input/>
     <toy_settings_input class="Toy_settings_input">
-        <potential_energy_expression>-20*exp(-1 * (x1 - 1)^2 + 0 * (x1 - 1) * (y1 - 0) - 10 * (y1 - 0)^2) - 10*exp(-1 * (x1 - 0)^2 + 0 * (x1 - 0) * (y1 - 0.5) - 10 * (y1 - 0.5)^2) - 17*exp(-6.5 * (x1 + 0.5)^2 + 11 * (x1 + 0.5) * (y1 - 1.5) - 6.5 * (y1 - 1.5)^2) + 1.5*exp(0.7 * (x1 + 1)^2 + 0.6 * (x1 + 1) * (y1 - 1) + 0.7 * (y1 - 1)^2)</potential_energy_expression>
+        <potential_energy_expression>-10*exp(-1 * (x1 - 1)^2 + 0 * (x1 - 1) * (y1 - 0) - 10 * (y1 - 0)^2) - 5*exp(-1 * (x1 - 0)^2 + 0 * (x1 - 0) * (y1 - 0.5) - 10 * (y1 - 0.5)^2) - 8.5*exp(-6.5 * (x1 + 0.5)^2 + 11 * (x1 + 0.5) * (y1 - 1.5) - 6.5 * (y1 - 1.5)^2) + 0.75*exp(0.7 * (x1 + 1)^2 + 0.6 * (x1 + 1) * (y1 - 1) + 0.7 * (y1 - 1)^2)</potential_energy_expression>
         <num_particles>1</num_particles>
         <masses numpy="float32">[10.0]</masses>
     </toy_settings_input>
