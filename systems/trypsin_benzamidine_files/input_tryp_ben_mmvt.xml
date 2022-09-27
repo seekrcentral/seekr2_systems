@@ -2,8 +2,8 @@
 <model_input class='Model_input'>
     <calculation_type>mmvt</calculation_type>
     <calculation_settings class="MMVT_input_settings">
-        <md_output_interval>1250000</md_output_interval>
-        <md_steps_per_anchor>125000000</md_steps_per_anchor>
+        <md_output_interval>2500000</md_output_interval>
+        <md_steps_per_anchor>250000000</md_steps_per_anchor>
     </calculation_settings>
     <temperature>298.0</temperature>
     <pressure>1.0</pressure>
