@@ -1,0 +1,118 @@
+<?xml version="1.0" ?>
+<model_input class='Model_input'>
+    <calculation_type>mmvt</calculation_type>
+    <calculation_settings class="MMVT_input_settings">
+        <md_output_interval>1250</md_output_interval>
+        <md_steps_per_anchor>125000</md_steps_per_anchor>
+    </calculation_settings>
+    <temperature>303.0</temperature>
+    <pressure>1.0</pressure>
+    <ensemble>npt_membrane</ensemble>
+    <root_directory>~/membrane_potassium_1d_closest_pair/</root_directory>
+    <md_program>openmm</md_program>
+    <constraints>HBonds</constraints>
+    <rigidWater>True</rigidWater>
+    <hydrogenMass/>
+    <integrator_type>langevin</integrator_type>
+    <timestep>0.002</timestep>
+    <nonbonded_cutoff>1.2</nonbonded_cutoff>
+    <cv_inputs>
+        <cv_input class="Closest_pair_cv_input">
+            <group1>[33245]</group1>
+            <group2>[19, 157, 295, 433, 571, 709, 847, 985, 1123, 1261, 
+                     1399, 1537, 1675, 1813, 1951, 2089, 2227, 2365, 
+                     2503, 2641, 2779, 2917, 3055, 3193, 3331, 3469, 
+                     3607, 3745, 3883, 4021, 4159, 4297, 4435, 4573, 
+                     4711, 4849, 4987, 5125, 5263, 5401, 5539, 5677, 
+                     5815, 5953, 6091, 6229, 6367, 6505, 6643, 6781, 
+                     6919, 7057, 7195, 7333, 7471, 7609, 7747, 7885, 
+                     8023, 8161, 8299, 8437, 8575, 8713, 8851, 8989, 
+                     9127, 9265, 9403, 9541, 9679, 9817, 9955, 10093, 
+                     10231, 10369, 10507, 10645, 10783, 10921, 11059, 
+                     11197, 11335, 11473, 11611, 11749, 11887, 12025, 
+                     12163, 12301, 12439, 12577, 12715, 12853, 12991, 
+                     13129, 13267, 13405, 13543, 13681, 13819, 13957, 
+                     14095, 14233, 14371, 14509, 14647, 14785, 14923, 
+                     15061, 15199, 15337, 15475, 15613, 15751, 15889, 
+                     16027, 16165, 16303, 16441]</group2>
+            <!-- Upper leaflet -->
+            <!--group2>[19, 157, 295, 433, 571, 709, 847, 985, 1123, 1261, 
+                     1399, 1537, 1675, 1813, 1951, 2089, 2227, 2365, 
+                     2503, 2641, 2779, 2917, 3055, 3193, 3331, 3469, 
+                     3607, 3745, 3883, 4021, 4159, 4297, 4435, 4573, 
+                     4711, 4849, 4987, 5125, 5263, 5401, 5539, 5677, 
+                     5815, 5953, 6091, 6229, 6367, 6505, 6643, 6781, 
+                     6919, 7057, 7195, 7333, 7471, 7609, 7747, 7885, 
+                     8023, 8161]</group2-->
+            <!-- Lower leaflet -->
+            <!--group2>[8299, 8437, 8575, 8713, 8851, 8989, 
+                     9127, 9265, 9403, 9541, 9679, 9817, 9955, 10093, 
+                     10231, 10369, 10507, 10645, 10783, 10921, 11059, 
+                     11197, 11335, 11473, 11611, 11749, 11887, 12025, 
+                     12163, 12301, 12439, 12577, 12715, 12853, 12991, 
+                     13129, 13267, 13405, 13543, 13681, 13819, 13957, 
+                     14095, 14233, 14371, 14509, 14647, 14785, 14923, 
+                     15061, 15199, 15337, 15475, 15613, 15751, 15889, 
+                     16027, 16165, 16303, 16441]</group2-->
+            <exponent>50</exponent>
+            <input_anchors>
+                <input_anchor class="Closest_pair_cv_anchor">
+                    <value>0.0</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_charmm_params class="Charmm_params">
+                        <psf_filename>membrane_and_potassium/membrane.psf</psf_filename>
+                        <charmm_ff_files>["membrane_and_potassium/par_all36_lipid.prm",
+                                          "membrane_and_potassium/top_all36_lipid.rtf",
+                                          "membrane_and_potassium/toppar_water_ions.str"]</charmm_ff_files>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_charmm_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Closest_pair_cv_anchor">
+                    <value>1.0</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_charmm_params class="Charmm_params">
+                        <psf_filename>membrane_and_potassium/membrane.psf</psf_filename>
+                        <charmm_ff_files>["membrane_and_potassium/par_all36_lipid.prm",
+                                          "membrane_and_potassium/top_all36_lipid.rtf",
+                                          "membrane_and_potassium/toppar_water_ions.str"]</charmm_ff_files>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_charmm_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Closest_pair_cv_anchor">
+                    <value>1.2</value>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_charmm_params class="Charmm_params">
+                        <psf_filename>membrane_and_potassium/membrane.psf</psf_filename>
+                        <charmm_ff_files>["membrane_and_potassium/par_all36_lipid.prm",
+                                          "membrane_and_potassium/top_all36_lipid.rtf",
+                                          "membrane_and_potassium/toppar_water_ions.str"]</charmm_ff_files>
+                        <box_vectors/>
+                        <pdb_coordinates_filename>membrane_and_potassium/membrane_potas_at_12.pdb</pdb_coordinates_filename>
+                    </starting_charmm_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+            </input_anchors>
+            <state_points>
+                <state_point  class="State_point">
+                    <name>lower_bulk</name>
+                    <location>1.3</location>
+                </state_point>
+                <state_point  class="State_point">
+                    <name>membrane contact</name>
+                    <location>0.1</location>
+                </state_point>
+            </state_points>
+        </cv_input>
+    </cv_inputs>
+    <browndye_settings_input/>
+</model_input>
