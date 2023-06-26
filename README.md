@@ -32,7 +32,7 @@ Any one of these input files may be used as input to a SEEKR2 calculation.
 
 Example:
 ```
-python ~/seekr2/seekr2/prepare.py systems/trp_cage_files/input_tryp_ben_mmvt.xml
+python ~/seekr2/seekr2/prepare.py systems/trypsin_benzamidine_files/input_tryp_ben_mmvt.xml
 ```
 
 Additionally, these input files are intended to be useful as references for

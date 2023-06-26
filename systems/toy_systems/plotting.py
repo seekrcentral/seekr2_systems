@@ -9,6 +9,7 @@ import glob
 from math import *
 
 import numpy as np
+from scipy.spatial import Voronoi, voronoi_plot_2d
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import mdtraj
@@ -18,8 +19,33 @@ except ModuleNotFoundError:
     import simtk.unit as unit
 import seekr2.modules.common_base as base
 
+def plot_voronoi_tesselation(model, boundaries):
+    points = []
+    num_variables = len(model.anchors[0].variables)
+    for alpha, anchor in enumerate(model.anchors):
+        #if anchor.bulkstate:
+        #    continue
+        values = []
+        for i in range(num_variables):
+            var_name = "value_0_{}".format(i)
+            values.append(anchor.variables[var_name])
+        
+        points.append(values)
+    
+    points.append([-100, -100])
+    points.append([100, 100])
+    
+    vor = Voronoi(points)
+    fig = voronoi_plot_2d(vor, line_width=2, show_vertices=False)
+    ax = plt.gca()
+    ax.axis(boundaries)
+    ax.set_aspect('equal', adjustable='box')
+    
+    return fig, ax, points[:-2]
+
+
 class Toy_plot():
-    def __init__(self, model, title, boundaries, landscape_resolution=100, stride=1):
+    def __init__(self, model, title, boundaries, landscape_resolution=100, stride=1, voronoi=False):
         """
         Object for plotting toy SEEKR calculations.
         """
@@ -27,7 +53,7 @@ class Toy_plot():
         self.title = title
         self.boundaries = boundaries
         self.landscape_resolution = landscape_resolution
-        
+        self.voronoi = voronoi
         self.function_str = self.refine_function_str(
             model.toy_settings.potential_energy_expression)
         fig, ax = self.plot_energy_landscape()
@@ -67,7 +93,11 @@ class Toy_plot():
                 if Z[j,i] > max_Z:
                     Z[j,i] = max_Z
         
-        fig, axs = plt.subplots(nrows=1, ncols=1)
+        if self.voronoi:
+            voronoi_boundaries = [min_x, max_x, min_y, max_y]
+            fig, axs, points = plot_voronoi_tesselation(self.model, voronoi_boundaries)
+        else:
+            fig, axs = plt.subplots(nrows=1, ncols=1)
         p = axs.pcolor(X, Y, Z, cmap=plt.cm.jet, vmin=Z.min(), 
                           vmax=Z.max())
         axs.set_title(self.title)
