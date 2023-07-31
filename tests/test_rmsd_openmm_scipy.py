@@ -2,6 +2,7 @@
 Compare the RMSD of two different structures whose RMSD is known.
 """
 
+import os
 import pytest
 import numpy as np
 from scipy.spatial import transform
@@ -17,13 +18,16 @@ except ImportError:
     import simtk.openmm.app as openmm_app
 from parmed import unit
 
+TEST_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 
 def test_rmsd_scipy():
     group = [4, 16, 26, 47, 57, 74, 98, 117, 139, 151, 158, 173, 179, 190, 
              201, 208, 240, 254, 268, 274]
 
-    pdb_filename1 = "../systems/trp_cage_files/trp_cage.pdb"
-    pdb_filename2 = "../systems/trp_cage_files/trp_cage_0.40.pdb"
+    pdb_filename1 = os.path.join(TEST_DIRECTORY, 
+                                 "../systems/trp_cage_files/trp_cage.pdb")
+    pdb_filename2 = os.path.join(TEST_DIRECTORY, 
+                                 "../systems/trp_cage_files/trp_cage_0.40.pdb")
 
     expected_rmsd = 0.3946
     
@@ -77,10 +81,14 @@ def test_rmsd_scipy():
 def test_rmsd_openmm():
     group = [4, 16, 26, 47, 57, 74, 98, 117, 139, 151, 158, 173, 179, 190, 
              201, 208, 240, 254, 268, 274]
-    prmtop_filename = "../systems/trp_cage_files/trp_cage.prmtop"
-    inpcrd_filename = "../systems/trp_cage_files/trp_cage.inpcrd"
-    pdb_filename1 = "../systems/trp_cage_files/trp_cage.pdb"
-    pdb_filename2 = "../systems/trp_cage_files/trp_cage_0.40.pdb"
+    prmtop_filename = os.path.join(TEST_DIRECTORY, 
+                                 "../systems/trp_cage_files/trp_cage.prmtop")
+    inpcrd_filename = os.path.join(TEST_DIRECTORY, 
+                                 "../systems/trp_cage_files/trp_cage.inpcrd")
+    pdb_filename1 = os.path.join(TEST_DIRECTORY, 
+                                 "../systems/trp_cage_files/trp_cage.pdb")
+    pdb_filename2 = os.path.join(TEST_DIRECTORY, 
+                                 "../systems/trp_cage_files/trp_cage_0.40.pdb")
 
     expected_rmsd = 0.3946
     
