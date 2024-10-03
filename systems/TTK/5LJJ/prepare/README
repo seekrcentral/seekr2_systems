@@ -1,0 +1,110 @@
+Instructions to prepare and parametrize the 5LJJ (Reversine) 
+                   system for simulation
+============================================================
+
+Dependencies:
+ - AmberTools 20
+ - VMD or other molecular viewer
+ - QMrebind (v0.5.0 at the time of writing)
+ - SEEKR2 (v2.1.6 at this time of writing)
+ - SeekrTools
+
+
+01_Xray:
+--------
+Directory 01_Xray contains the original Xray crystal structure
+as well as some PDB files generated after processing by Maestro:
+ - The full system (both ligand and receptor)
+ - Just the receptor
+ - Just the ligand
+
+
+02_Param:
+---------
+Submit a job to PDB2PQR for the PDB structure that contains just
+the receptor at the site https://server.poissonboltzmann.org/pdb2pqr
+Select AMBER FF and AMBER naming scheme. Download the resulting 
+PQR file to 02_Param.
+
+Within 02_Param:
+
+  cp ../01_Xray/5LJJ_prep_lig.pdb lig.pdb
+  
+Within lig.pdb, rename resname as MOL. Remove excess waters.
+View in VMD or other molecular viewer to check structure.
+
+  antechamber -i lig.pdb -fi pdb -bk MOL -o lig.mol2 -fo mol2 -c bcc
+  parmchk2 -i lig.mol2 -f mol2 -o lig.frcmod
+  
+  tleap
+  source leaprc.gaff
+  MOL = loadmol2 lig.mol2
+  saveoff MOL lig.lib
+  quit
+  
+Open 01_Xray/5LJJ_prep.pdb in VMD. Save structure without hydrogens as 
+02_Param/5LJJ_noh.pdb. Using the PQR file as a guide, change the 
+histidines within the 5LJJ_noh.pdb from HIS to HID, HIE, or HIP as
+the PQR2PQR server predicted, save as 5LJJ_his_fixed.pdb
+
+Rename the ligand residue within 5LJJ_his_fixed.pdb to MOL. Add any 
+missing TERs between chains or molecules.
+
+Next, run LEAP
+
+  tleap -f prep.leap
+
+Load 5LJJ_prep_comp.top and 5LJJ_prep_comp.crd into VMD and check 
+their structures.
+
+Copy the resulting 5LJJ_prep_comp.crd, 5LJJ_prep_comp.pdb, and 
+5LJJ_prep_comp.top files to 03_MinEqu
+
+03_MinEqu
+---------
+Within the 03_MinEqu directory, run the minimization and equilibration
+script:
+
+  python md_min_equil.py
+
+After running for a long time (perhaps few hours), this makes a file 
+named "equilibrated.pdb". This file must be imaged with CPPTRAJ:
+
+  cpptraj < image_traj.cpptraj
+
+View equilibrated_imaged.pdb in VMD to check structure.
+
+Copy the resulting 5LJJ_prep_comp.top and equilibrated_imaged.pdb 
+files to 04_qmrebind.
+
+
+04_qmrebind
+-----------
+Activate the QMrebind environment:
+
+  conda activate QMMM
+
+Run QMrebind on this system to reparametrize the partial charges:
+
+  python ~/qmrebind/qmrebind/run_qmrebind_amber.py equilibrated_imaged.pdb 5LJJ_prep_comp.top -L MOL -c 5.0 -m MP2 -b "cc-pVTZ" -n 4
+
+Deactivate the QMrebind environment:
+
+  conda deactivate
+
+After this run is completed, the 5LJJ_prep_comp.top file within the 
+04_qmrebind/work_dir_qmrebind directory is used as input to SEEKR, as
+is equilibrated_imaged.pdb.
+
+The ligand.pqr and receptor.pqr files were prepared using ambpdb:
+
+  ambpdb -p 5LJJ_prep_comp.top -c 5LJJ_prep_comp.crd -pqr > 5ljj_all.pqr
+
+And then the receptor portion was manually separated from the ligand
+portion and placed into different files: "receptor.pqr" and 
+"ligand_not_renumbered.pqr". The latter file must be renumbered. A
+script within seekrtools automatically does this:
+
+  python ~/seekrtools/seekrtools/scripts/pqr_resid_for_each_atom.py ligand_not_renumbered.pqr ligand.pqr
+
+All files are now present for use to prepare a HIDR/SEEKR calculation.

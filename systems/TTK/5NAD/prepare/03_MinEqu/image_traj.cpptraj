@@ -1,0 +1,8 @@
+parm equilibrated.pdb
+box x 73.300 y 73.300 z 73.300 alpha 109.471 beta 109.471 gamma 109.471
+trajin 5NAD_equilibration_trajectory.pdb
+autoimage @280
+trajout 5NAD_equilibration_trajectory_imaged.dcd include_ep
+go
+quit
+

@@ -1,0 +1,19 @@
+source leaprc.protein.ff19SB
+source leaprc.gaff
+source leaprc.water.tip4pew
+set default PBRadii mbondi2
+loadoff lig.lib
+loadamberparams lig.frcmod
+WAT = T4E
+HOH = T4E
+loadAmberParams frcmod.ionsjc_tip4pew
+loadAmberParams frcmod.tip4pew
+mol = loadpdb 5LJJ_his_fixed.pdb
+solvateoct mol TIP4PEWBOX 8
+addIons2 mol K+ 2
+addIons2 mol Cl- 0
+saveamberparm mol 5LJJ_prep_comp.top 5LJJ_prep_comp.crd
+savepdb mol 5LJJ_prep_comp.pdb
+check mol
+charge mol
+quit

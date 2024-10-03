@@ -1,0 +1,8 @@
+parm equilibrated.pdb
+box x 76.842 y 76.842 z 76.842 alpha 109.471 beta 109.471 gamma 109.471
+trajin equilibrated.pdb
+autoimage @280
+trajout equilibrated_imaged.pdb include_ep
+go
+quit
+

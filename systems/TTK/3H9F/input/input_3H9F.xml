@@ -1,0 +1,336 @@
+<?xml version="1.0" ?>
+<model_input class='Model_input'>
+    <calculation_type>mmvt</calculation_type>
+    <calculation_settings class="MMVT_input_settings">
+        <md_output_interval>1000000</md_output_interval>
+        <md_steps_per_anchor>250000000</md_steps_per_anchor>
+    </calculation_settings>
+    <temperature>298.0</temperature>
+    <pressure>1.0</pressure>
+    <ensemble>nvt</ensemble>
+    <root_directory>root</root_directory>
+    <md_program>openmm</md_program> 
+    <constraints>HBonds</constraints>
+    <rigidWater>True</rigidWater>
+    <hydrogenMass/>
+    <timestep>0.002</timestep>
+    <nonbonded_cutoff>1.0</nonbonded_cutoff>
+    <cv_inputs>
+        <cv_input class="Spherical_cv_input">
+            <group1>[277, 619, 1450, 1482, 1493, 1514, 1578, 2312, 2622, 2654]</group1>
+            <group2>[4568, 4571, 4574, 4575, 4578, 4581, 4584, 4585, 4586, 4587, 4590, 4592, 4593, 4594, 4598, 4599, 4601, 4602, 4603, 4604, 4606, 4607, 4608, 4609, 4610, 4611, 4612, 4613, 4623, 4626, 4629, 4630, 4631, 4632]</group2>
+            <input_anchors>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.15</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.225</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.3</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.375</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.45</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.525</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.6</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.7</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.8</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>0.9</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.0</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.1</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.2</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.3</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.4</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.5</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.6</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.7</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>1.8</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>2.0</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>2.2</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>2.4</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>2.6</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename>3H9F_prep_comp.parm7</prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>False</bulk_anchor>
+                </input_anchor>
+                <input_anchor class="Spherical_cv_anchor">
+                    <radius>2.8</radius>
+                    <lower_milestone_radius/>
+                    <upper_milestone_radius/>
+                    <starting_amber_params class="Amber_params">
+                        <prmtop_filename></prmtop_filename>
+                        <box_vectors/>
+                        <pdb_coordinates_filename></pdb_coordinates_filename>
+                    </starting_amber_params>
+                    <bound_state>False</bound_state>
+                    <bulk_anchor>True</bulk_anchor>
+                </input_anchor>
+            </input_anchors>
+        </cv_input>
+    </cv_inputs>
+    <browndye_settings_input class="Browndye_settings_input">
+        <binary_directory></binary_directory>
+        <receptor_pqr_filename>receptor.pqr</receptor_pqr_filename>
+        <ligand_pqr_filename>ligand.pqr</ligand_pqr_filename>
+        <apbs_grid_spacing>0.5</apbs_grid_spacing>
+        <receptor_indices>[277, 619, 1450, 1482, 1493, 1514, 1578, 2312, 2622, 2654]</receptor_indices>
+        <ligand_indices>[0, 3, 6, 7, 10, 13, 16, 17, 18, 19, 22, 24, 25, 26, 30, 31, 33, 34, 35, 36, 38, 39, 40, 41, 42, 43, 44, 45, 55, 58, 61, 62, 63, 64]</ligand_indices>
+        <ions>
+            <ion class="Ion">
+                <radius>1.2</radius>
+                <charge>-1.0</charge>
+                <conc>0.01</conc>
+            </ion>
+            <ion class="Ion">
+                <radius>0.9</radius>
+                <charge>1.0</charge>
+                <conc>0.01</conc>
+            </ion>
+        </ions>
+        <num_b_surface_trajectories>100000</num_b_surface_trajectories>
+        <n_threads>6</n_threads>
+    </browndye_settings_input>
+</model_input>

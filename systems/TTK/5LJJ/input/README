@@ -1,0 +1,19 @@
+SEEKR input for 5LJJ (Reversine) System.
+========================================
+
+This directory contains all files needed to prepare and run a HIDR/SEEKR
+calculation for this system.
+
+To prepare the SEEKR calculation from the inputs, run:
+
+  python ~/seekr2/seekr2/prepare.py input_5LJJ.xml
+
+To run HIDR to generate the starting structures using MetaD:
+
+  python ~/seekrtools/seekrtools/hidr/hidr.py any model.xml -M metadyn -p equilibrated_imaged.pdb -c 0 -H 1.0
+
+-- OR -- 
+
+To run HIDR to generate the starting structures using SMD:
+
+  python ~/seekrtools/seekrtools/hidr/hidr.py any model.xml -M SMD -p equilibrated_imaged.pdb -c 0 -k 50000 -v 0.0165

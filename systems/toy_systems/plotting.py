@@ -151,6 +151,7 @@ class Toy_plot():
                 
                 walks.append(np.array(walk))
             
+        print("np.array(walk).shape:", np.array(walk).shape)
         return walks
     
     def update_lines(self, num, walks, lines):
@@ -161,6 +162,8 @@ class Toy_plot():
         
         index = self.stride * num
         for i, (walk, line) in enumerate(zip(walks,lines)):
+            if len(walk) == 0:
+                continue
             circle1 = self.circle1_list[i]
             circle2 = self.circle2_list[i]
             if index < len(walk):
